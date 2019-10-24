@@ -55,10 +55,10 @@ public class agenda {
 		if (hueco == -1) {
 			System.out.println("No hay hueco disponibles");
 		}else {
-			System.out.println("dime un nombre");
+			System.out.println("Dime un nombre");
 			matriz[hueco][0] = leer.nextLine();
 			
-			System.out.println("dime la edad");
+			System.out.println("Dime la edad");
 			matriz[hueco][1] = leer.nextLine();
 			
 		}
@@ -71,8 +71,8 @@ public class agenda {
 		int opc = 0;
 		String mAgenda[][] = new String[20][2];
 		
-		
-		opc = opciones();
+		do {
+			
 		
 		switch (opc = opciones()) {
 		case 1:
@@ -91,14 +91,16 @@ public class agenda {
 			
 			break;
 		case 6:
+			System.out.println("");
 			System.out.println("¡ADIOS!");
+			System.out.println("");
 			break;
 			
 		default:
 			break;
 		}
 			
-		
+		} while (opc != 6);
 		
 	}
 
