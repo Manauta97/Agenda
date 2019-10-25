@@ -78,21 +78,68 @@ public class agenda {
 	public static void borrarContacto(String matriz[][]) {
 		Scanner leer = new Scanner(System.in);
 		String nombre = "";
+		int pos = buscarContacto(matriz);
+		if (pos!=-1) {
+			matriz[pos][0] = null;
+			matriz[pos][1] = null;
+			System.out.println("Contacto borrado");
+		}else {
+			System.out.println("Contacto NO borrado");
+		}
+
+	
+//		System.out.println("Dime el nombre del contacto que quieres borrar");
+//		nombre = leer.nextLine();
+//		
+//		for (int i = 0; i < matriz.length; i++) {
+//		
+//			if ((matriz[i][0] != null) && matriz[i][0].equalsIgnoreCase(nombre)) {
+//				
+//				matriz[i][0] = null;
+//				matriz[i][1] = null;
+//				
+//				System.out.println("El contacto ha sido borrado");
+//				
+//			}
+//		}
+	}
+	
+	public static int buscarContacto(String matriz[][]) {
+		Scanner leer = new Scanner(System.in);
+		boolean encontrado = false;
+		String nombre = "";
 		
-		System.out.println("Dime el nombre del contacto que quieres borrar");
+		System.out.println("Dime que contacto quieres buscar");
 		nombre = leer.nextLine();
 		
 		for (int i = 0; i < matriz.length; i++) {
-		
+			
 			if ((matriz[i][0] != null) && matriz[i][0].equalsIgnoreCase(nombre)) {
-				
-				matriz[i][0] = null;
-				matriz[i][1] = null;
-				
-				System.out.println("El contacto ha sido borrado");
-				
+				System.out.println("El contacto de nombre " + matriz[i][0] + " y Telefono " + matriz[i][1] + " ha sido encontrado");
+				encontrado = true;
+				return i;
 			}
 		}
+		
+		if (encontrado = false) {
+			System.out.println("Contacto no encontrado");
+		}
+		return -1;
+		
+	}
+	
+	public static void editarContacto(String matriz[][]){
+		Scanner leer = new Scanner(System.in);
+		String nombre = "";
+		
+		int pos = buscarContacto(matriz);
+		
+		System.out.println("Nombre editado");
+		matriz[pos][0] = leer.nextLine();
+		System.out.println("Numero editado");
+		matriz[pos][1] = leer.nextLine();
+		
+		
 	}
 	
 	public static void main(String[] args) {
@@ -113,10 +160,10 @@ public class agenda {
 			borrarContacto(mAgenda);
 			break;
 		case 4:
-			
+			buscarContacto(mAgenda);
 			break;
 		case 5:
-			
+			editarContacto(mAgenda);
 			break;
 		case 6:
 			System.out.println("");
