@@ -58,12 +58,41 @@ public class agenda {
 			System.out.println("Dime un nombre");
 			matriz[hueco][0] = leer.nextLine();
 			
-			System.out.println("Dime la edad");
+			System.out.println("Dime el nº de teléfono");
 			matriz[hueco][1] = leer.nextLine();
 			
 		}
-
+	}
 		
+	public static void verContacto(String matriz[][]) {
+		
+		for (int i = 0; i < matriz.length; i++) {
+			
+			if (matriz[i][0] != null) {
+				System.out.println("Nombre ---> " + matriz[i][0] + " Edad ---> " + matriz[i][1] );
+			} 	
+		}
+		
+	}
+	
+	public static void borrarContacto(String matriz[][]) {
+		Scanner leer = new Scanner(System.in);
+		String nombre = "";
+		
+		System.out.println("Dime el nombre del contacto que quieres borrar");
+		nombre = leer.nextLine();
+		
+		for (int i = 0; i < matriz.length; i++) {
+		
+			if ((matriz[i][0] != null) && matriz[i][0].equalsIgnoreCase(nombre)) {
+				
+				matriz[i][0] = null;
+				matriz[i][1] = null;
+				
+				System.out.println("El contacto ha sido borrado");
+				
+			}
+		}
 	}
 	
 	public static void main(String[] args) {
@@ -72,17 +101,16 @@ public class agenda {
 		String mAgenda[][] = new String[20][2];
 		
 		do {
-			
 		
 		switch (opc = opciones()) {
 		case 1:
-			
+			verContacto(mAgenda);
 			break;
 		case 2:
 			guardarContacto(mAgenda);
 			break;
 		case 3:
-			
+			borrarContacto(mAgenda);
 			break;
 		case 4:
 			
