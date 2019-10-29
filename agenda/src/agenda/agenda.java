@@ -29,7 +29,7 @@ public class agenda {
 		
 			if (bandera = false) {
 				System.out.println("");
-				System.out.println("Escribe una opción valida");
+				System.out.println("Escribe una opciï¿½n valida");
 			}	
 		} while (bandera);
 		
@@ -58,7 +58,7 @@ public class agenda {
 			System.out.println("Dime un nombre");
 			matriz[hueco][0] = leer.nextLine();
 			
-			System.out.println("Dime el nº de teléfono");
+			System.out.println("Dime el nï¿½ de telï¿½fono");
 			matriz[hueco][1] = leer.nextLine();
 			
 		}
@@ -143,6 +143,8 @@ public class agenda {
 	}
 	
 	public static void main(String[] args) {
+		
+		//RevisiÃ³n de juanfra
 		Scanner leer = new Scanner(System.in);
 		int opc = 0;
 		String mAgenda[][] = new String[20][2];
@@ -167,7 +169,7 @@ public class agenda {
 			break;
 		case 6:
 			System.out.println("");
-			System.out.println("¡ADIOS!");
+			System.out.println("ï¿½ADIOS!");
 			System.out.println("");
 			break;
 			
