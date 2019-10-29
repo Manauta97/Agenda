@@ -69,7 +69,7 @@ public class agenda {
 		for (int i = 0; i < matriz.length; i++) {
 			
 			if (matriz[i][0] != null) {
-				System.out.println("Nombre ---> " + matriz[i][0] + " Edad ---> " + matriz[i][1] );
+				System.out.println("Nombre ---> " + matriz[i][0] + " Telefono ---> " + matriz[i][1] );
 			} 	
 		}
 		
