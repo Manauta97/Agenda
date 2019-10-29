@@ -63,7 +63,7 @@ public class agenda {
 			
 		}
 	}
-		
+	
 	public static void verContacto(String matriz[][]) {
 		
 		for (int i = 0; i < matriz.length; i++) {
